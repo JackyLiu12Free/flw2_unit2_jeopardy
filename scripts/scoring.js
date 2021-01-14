@@ -22,7 +22,7 @@ function renderScoringButtons() {
     addToScore();
   });
   $("#incorrect-button").click(() => {
-    subtractFrom();
+    subtractFromScore();
   });
 
   $("#question-modal-show-answer").click(() => {
@@ -51,8 +51,14 @@ function renderScoringButtons() {
  */
 function subtractFromScore() {
   // Add code here
+  var currentScore = getCurrentScore();
+  var newScore = currentScore - currentQuestionValue;
+  $("#current-score").text(newScore);
 }
 
 function addToScore() {
   // Add code here
+  var currentScore = getCurrentScore();
+  var newScore = currentScore + currentQuestionValue;
+  $("#current-score").text(newScore);
 }
